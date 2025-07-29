@@ -1,0 +1,11 @@
+<div class="modal-backdrop" (click)="onClose()" @backdrop>
+  <div class="modal-content" (click)="$event.stopPropagation()" @modal>
+    <button class="close-btn" (click)="onClose()">×</button>
+    <h2>{{ project.title }}</h2>
+    <div class="tech-stack">
+      <span *ngFor="let tech of project.techStack" class="tech-tag">{{ tech }}</span>
+    </div>
+    <p class="description">{{ project.description }}</p>
+    <p *ngIf="project.notes" class="notes"><strong>Notes:</strong> {{ project.notes }}</p>
+  </div>
+</div>

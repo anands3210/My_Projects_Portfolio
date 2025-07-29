@@ -1,0 +1,26 @@
+<section class="projects-section">
+  <!-- Search and Filter Controls -->
+  <div class="controls-container">
+    <input type="text" placeholder="Search projects..." class="search-bar" (input)="searchProjects($event)">
+    <div class="filter-buttons">
+      <button *ngFor="let category of categories" (click)="filterByCategory(category)">
+        {{ category }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Project Grid -->
+  <div class="project-grid">
+    @for (project of filteredProjects; track project.id) {
+      <app-project-card [project]="project" (viewDetails)="onViewDetails($event)"></app-project-card>
+    }
+  </div>
+  @if (filteredProjects.length === 0) {
+    <p class="no-results">No projects found.</p>
+  }
+</section>
+
+<!-- Modal -->
+@if (selectedProject) {
+  <app-project-modal [project]="selectedProject" (close)="onCloseModal()"></app-project-modal>
+}

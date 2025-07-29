@@ -1,0 +1,11 @@
+<div class="project-card">
+  <img [src]="project.imageUrl" [alt]="project.title" class="card-thumbnail">
+  <div class="card-content">
+    <h3>{{ project.title }}</h3>
+    <div class="card-buttons">
+      <a *ngIf="project.liveDemoUrl" [href]="project.liveDemoUrl" target="_blank" class="btn btn-primary">Live Demo</a>
+      <a [href]="project.githubUrl" target="_blank" class="btn btn-secondary">GitHub</a>
+      <button (click)="onViewDetailsClick()" class="btn btn-tertiary">Details</button>
+    </div>
+  </div>
+</div>

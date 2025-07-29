@@ -1,0 +1,45 @@
+.app-footer {
+  padding: 2.5rem 2rem;
+  background-color: #111827;
+  text-align: center;
+  margin-top: 5rem;
+  border-top: 1px solid #374151;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+
+  a {
+    color: #9ca3af;
+    transition: all 0.3s ease;
+
+    svg {
+      width: 32px;
+      height: 32px;
+      fill: currentColor;
+    }
+
+    &:hover {
+      color: #5eead4; // A nice teal color
+      transform: translateY(-5px) scale(1.1);
+    }
+  }
+}
+
+.footer-text {
+  color: #6b7280;
+  font-size: 1rem;
+  .heart {
+    color: #f43f5e;
+    display: inline-block;
+    animation: pulse 1.5s infinite;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
